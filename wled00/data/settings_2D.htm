@@ -70,21 +70,21 @@
 		var ph = parseInt(d.Sf.PH.value);
 		//MoonModules: change name to id
 		let b = `<div id="pnl${i}"><hr class="sml">Panel ${i}<br>
-1<sup>st</sup> LED: <select id="P${i}B" oninput="draw()">
+1<sup>st</sup> LED: <select id="P${i}B" name="P${i}B" oninput="draw()">
 	<option value="0">Top</option>
 	<option value="1">Bottom</option>
-</select><select id="P${i}R" oninput="draw()">
+</select><select id="P${i}R" name="P${i}R" oninput="draw()">
 	<option value="0">Left</option>
 	<option value="1">Right</option>
 </select><br>
-Orientation: <select id="P${i}V" oninput="draw()">
+Orientation: <select id="P${i}V" name="P${i}V" oninput="draw()">
 	<option value="0">Horizontal</option>
 	<option value="1">Vertical</option>
 </select><br>
-Serpentine: <input type="checkbox" id="P${i}S" oninput="draw()"><br>
-Dimensions (WxH): <input id="P${i}W" id="P${i}W" type="number" min="1" max="128" value="${pw}" oninput="draw()"> x <input id="P${i}H" id="P${i}H" type="number" min="1" max="128" value="${ph}" oninput="draw()"><br>
-Offset X:<input id="P${i}X" id="P${i}X" type="number" min="0" max="256" value="0" oninput="draw()">
-Y:<input id="P${i}Y" id="P${i}Y" type="number" min="0" max="256" value="0" oninput="draw()"><br><i>(offset from top-left corner in # LEDs)</i>
+Serpentine: <input id="P${i}S" name="P${i}S" type="checkbox" onclick="draw()"><br>
+Dimensions (WxH): <input id="P${i}W" name="P${i}W" type="number" min="1" max="255" value="${pw}" oninput="draw()"> x <input id="P${i}H" name="P${i}H" type="number" min="1" max="255" value="${ph}" oninput="draw()"><br>
+Offset X:<input id="P${i}X" name="P${i}X" type="number" min="0" max="255" value="0" oninput="draw()">
+Y:<input id="P${i}Y" name="P${i}Y" type="number" min="0" max="255" value="0" oninput="draw()"><br><i>(offset from top-left corner in # LEDs)</i>
 </div>`;
 		p.insertAdjacentHTML("beforeend", b);
 	}
